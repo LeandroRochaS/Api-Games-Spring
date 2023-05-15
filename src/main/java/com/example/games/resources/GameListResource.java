@@ -18,9 +18,15 @@ import java.util.List;
 public class GameListResource {
     @Autowired
     private GameListService gameListService;
+    @Autowired
+    private GameService gameService;
     @GetMapping
     public ResponseEntity<List<GameListDTO>> findAll(){
         return ResponseEntity.ok().body(gameListService.findAll());
     }
 
+    @GetMapping(value = "/{listId}/games")
+    public ResponseEntity<List<GameAllDTO>> findByList(@PathVariable Long listId){
+        return ResponseEntity.ok().body(gameService.findByList(listId));
+    }
 }
