@@ -3,7 +3,6 @@ package com.example.games.resources;
 import com.example.games.dto.GameAllDTO;
 import com.example.games.dto.GameDTO;
 import com.example.games.entities.Game;
-import com.example.games.repositories.GameRepository;
 import com.example.games.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/games")
-public class GamesResource {
+public class GameResource {
     @Autowired
     private GameService gameService;
     @GetMapping

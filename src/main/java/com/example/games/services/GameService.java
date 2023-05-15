@@ -7,6 +7,7 @@ import com.example.games.repositories.GameRepository;
 import org.hibernate.cache.spi.entry.StructuredCacheEntry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -19,12 +20,13 @@ public class GameService {
 
     @Autowired
     private GameRepository gameRepository;
-
+    @Transactional(readOnly = true)
     public List<GameAllDTO> findAll(){
         List<GameAllDTO> foodList = (List<GameAllDTO>) gameRepository.findAll().stream().map(GameAllDTO::new).toList();
         return foodList;
     }
 
+    @Transactional(readOnly = true)
     public GameDTO findById(Long id) {
         Optional<Game> game = gameRepository.findById(id);
         if (((Optional<?>) game).isEmpty()) {
