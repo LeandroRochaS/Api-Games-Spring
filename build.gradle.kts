@@ -4,7 +4,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.0"
 }
 
-group = "com.example.filmes"
+group = "com.example.games"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
@@ -37,7 +37,7 @@ tasks.withType<Test> {
 tasks.jar {
 	enabled = true
 	manifest {
-		attributes["Main-Class"] = "com.example.filmes"
+		attributes["Main-Class"] = "com.example.games"
 	}
 }
 
