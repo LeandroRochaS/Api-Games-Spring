@@ -33,7 +33,6 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	implementation("org.springframework.boot:spring-boot-autoconfigure:2.2.2.RELEASE")
 	runtimeOnly("org.postgresql:postgresql")
 
 }
