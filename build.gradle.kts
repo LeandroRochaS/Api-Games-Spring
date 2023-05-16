@@ -33,3 +33,11 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.jar {
+	enabled = true
+	manifest {
+		attributes["Main-Class"] = "com.example.filmes.MainKt"
+	}
+}
+
