@@ -37,7 +37,7 @@ tasks.withType<Test> {
 tasks.jar {
 	enabled = true
 	manifest {
-		attributes["Main-Class"] = "com.example.filmes.MainKt"
+		attributes["Main-Class"] = "com.example.filmes"
 	}
 }
 
